@@ -1,0 +1,236 @@
+---
+title: CLI
+description: sgptcoder CLI options and commands.
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+The sgptcoder CLI by default starts the [TUI](/docs/tui) when run without any arguments.
+
+```bash
+sgptcoder
+```
+
+But it also accepts commands as documented on this page. This allows you to interact with sgptcoder programmatically.
+
+```bash
+sgptcoder run "Explain how closures work in JavaScript"
+```
+
+---
+
+## Commands
+
+The sgptcoder CLI also has the following commands.
+
+---
+
+### agent
+
+Manage agents for sgptcoder.
+
+```bash
+sgptcoder agent [command]
+```
+
+---
+
+#### create
+
+Create a new agent with custom configuration.
+
+```bash
+sgptcoder agent create
+```
+
+This command will guide you through creating a new agent with a custom system prompt and tool configuration.
+
+---
+
+### auth
+
+Command to manage credentials and login for providers.
+
+```bash
+sgptcoder auth [command]
+```
+
+---
+
+#### login
+
+sgptcoder is powered by the provider list at [Models.dev](https://models.dev), so you can use `sgptcoder auth login` to configure API keys for any provider you'd like to use. This is stored in `~/.local/share/sgptcoder/auth.json`.
+
+```bash
+sgptcoder auth login
+```
+
+When sgptcoder starts up it loads the providers from the credentials file. And if there are any keys defined in your environments or a `.env` file in your project.
+
+---
+
+#### list
+
+Lists all the authenticated providers as stored in the credentials file.
+
+```bash
+sgptcoder auth list
+```
+
+Or the short version.
+
+```bash
+sgptcoder auth ls
+```
+
+---
+
+#### logout
+
+Logs you out of a provider by clearing it from the credentials file.
+
+```bash
+sgptcoder auth logout
+```
+
+---
+
+### github
+
+Manage the GitHub agent for repository automation.
+
+```bash
+sgptcoder github [command]
+```
+
+---
+
+#### install
+
+Install the GitHub agent in your repository.
+
+```bash
+sgptcoder github install
+```
+
+This sets up the necessary GitHub Actions workflow and guides you through the configuration process. [Learn more](/docs/github).
+
+---
+
+#### run
+
+Run the GitHub agent. This is typically used in GitHub Actions.
+
+```bash
+sgptcoder github run
+```
+
+##### Flags
+
+| Flag      | Description                            |
+| --------- | -------------------------------------- |
+| `--event` | GitHub mock event to run the agent for |
+| `--token` | GitHub personal access token           |
+
+---
+
+### models
+
+List all available models from configured providers.
+
+```bash
+sgptcoder models
+```
+
+This command displays all models available across your configured providers in the format `provider/model`.
+
+---
+
+### run
+
+Run sgptcoder in non-interactive mode by passing a prompt directly.
+
+```bash
+sgptcoder run [message..]
+```
+
+This is useful for scripting, automation, or when you want a quick answer without launching the full TUI. For example.
+
+```bash "sgptcoder run"
+sgptcoder run Explain the use of context in Go
+```
+
+#### Flags
+
+| Flag         | Short | Description                                |
+| ------------ | ----- | ------------------------------------------ |
+| `--continue` | `-c`  | Continue the last session                  |
+| `--session`  | `-s`  | Session ID to continue                     |
+| `--share`    |       | Share the session                          |
+| `--model`    | `-m`  | Model to use in the form of provider/model |
+| `--agent`    |       | Agent to use                               |
+
+---
+
+### serve
+
+Start a headless sgptcoder server for API access. Check out the [server docs](/docs/server) for the full HTTP interface.
+
+```bash
+sgptcoder serve
+```
+
+This starts an HTTP server that provides API access to sgptcoder functionality without the TUI interface.
+
+#### Flags
+
+| Flag         | Short | Description           |
+| ------------ | ----- | --------------------- |
+| `--port`     | `-p`  | Port to listen on     |
+| `--hostname` | `-h`  | Hostname to listen on |
+
+---
+
+### upgrade
+
+Updates sgptcoder to the latest version or a specific version.
+
+```bash
+sgptcoder upgrade [target]
+```
+
+To upgrade to the latest version.
+
+```bash
+sgptcoder upgrade
+```
+
+To upgrade to a specific version.
+
+```bash
+sgptcoder upgrade v0.1.48
+```
+
+#### Flags
+
+| Flag       | Short | Description                                                       |
+| ---------- | ----- | ----------------------------------------------------------------- |
+| `--method` | `-m`  | The installation method that was used; curl, npm, pnpm, bun, brew |
+
+---
+
+## Flags
+
+The sgptcoder CLI takes the following global flags.
+
+| Flag           | Short | Description                                |
+| -------------- | ----- | ------------------------------------------ |
+| `--help`       | `-h`  | Display help                               |
+| `--version`    |       | Print version number                       |
+| `--print-logs` |       | Print logs to stderr                       |
+| `--log-level`  |       | Log level (DEBUG, INFO, WARN, ERROR)       |
+| `--prompt`     | `-p`  | Prompt to use                              |
+| `--model`      | `-m`  | Model to use in the form of provider/model |
+| `--agent`      |       | Agent to use                               |
+| `--port`       |       | Port to listen on                          |
+| `--hostname`   |       | Hostname to listen on                      |

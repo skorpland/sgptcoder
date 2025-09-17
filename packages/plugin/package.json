@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@skorpland/plugin",
+  "version": "0.9.7",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "development": "./src/index.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@skorpland/sdk": "workspace:*"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "catalog:",
+    "typescript": "catalog:"
+  }
+}
