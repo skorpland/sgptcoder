@@ -1,20 +1,4 @@
-<p align="center">
-  <a href="https://sgptcoder.ai">
-    <picture>
-      <source srcset="packages/web/src/assets/logo-ornate-dark.svg" media="(prefers-color-scheme: dark)">
-      <source srcset="packages/web/src/assets/logo-ornate-light.svg" media="(prefers-color-scheme: light)">
-      <img src="packages/web/src/assets/logo-ornate-light.svg" alt="sgptcoder logo">
-    </picture>
-  </a>
-</p>
-<p align="center">AI coding agent, built for the terminal.</p>
-<p align="center">
-  <a href="https://sgptcoder.ai/discord"><img alt="Discord" src="https://img.shields.io/discord/1391832426048651334?style=flat-square&label=discord" /></a>
-  <a href="https://www.npmjs.com/package/sgptcoder-ai"><img alt="npm" src="https://img.shields.io/npm/v/sgptcoder-ai?style=flat-square" /></a>
-  <a href="https://github.com/skorpland/sgptcoder/actions/workflows/publish.yml"><img alt="Build status" src="https://img.shields.io/github/actions/workflow/status/skorpland/sgptcoder/publish.yml?style=flat-square&branch=dev" /></a>
-</p>
-
-[![sgptcoder Terminal UI](packages/web/src/assets/lander/screenshot.png)](https://sgptcoder.ai)
+<p align="center">Sgptcoder is a terminal based AI agent built for easy to use coding on any new or existing projects using popular AI models like OpenAI, Anthropic, Grok, etc.</p>
 
 ---
 
@@ -101,10 +85,6 @@ It's very similar to Claude Code in terms of capability. Here are the key differ
 - A focus on TUI. sgptcoder is built by neovim users and the creators of [terminal.shop](https://terminal.shop); we are going to push the limits of what's possible in the terminal.
 - A client/server architecture. This for example can allow sgptcoder to run on your computer, while you can drive it remotely from a mobile app. Meaning that the TUI frontend is just one of the possible clients.
 
-#### What's the other repo?
-
-The other confusingly named repo has no relation to this one. You can [read the story behind it here](https://x.com/thdxr/status/1933561254481666466).
-
 ---
 
-**Join our community** [Discord](https://discord.gg/sgptcoder) | [X.com](https://x.com/sgptcoder)
+**Join our community** A Skorpland platform(https://skorpland.com)
