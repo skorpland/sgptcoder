@@ -1,0 +1,8 @@
+{
+  "$schema": "https://charm.land/sgpt.json",
+  "lsp": {
+    "Go": {
+      "command": "gopls"
+    }
+  }
+}
