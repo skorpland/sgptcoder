@@ -28,8 +28,8 @@ The install script respects the following priority order for the installation pa
 
 ```bash
 # Examples
-SGPTCODER_INSTALL_DIR=/usr/local/bin curl -fsSL https://sgptcoder.ai/install | bash
-XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://sgptcoder.ai/install | bash
+SGPTCODER_INSTALL_DIR=/usr/local/bin curl -fsSL https://raw.githubusercontent.com/skorpland/sgptcoder/refs/heads/main/install | bash
+XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://raw.githubusercontent.com/skorpland/sgptcoder/refs/heads/main/install | bash
 ```
 
 ### Documentation
