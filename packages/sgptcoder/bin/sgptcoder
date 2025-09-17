@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
 
-if [ -n "$OPENCODE_BIN_PATH" ]; then
-    resolved="$OPENCODE_BIN_PATH"
+if [ -n "$SGPTCODER_BIN_PATH" ]; then
+    resolved="$SGPTCODER_BIN_PATH"
 else
     # Get the real path of this script, resolving any symlinks
     script_path="$0"

@@ -1,11 +1,11 @@
 import { createContext, useContext, type ParentProps } from "solid-js"
-import { createOpencodeClient } from "@skorpland/sdk/client"
+import { createSgptcoderClient } from "@skorpland/sdk/client"
 
-const host = import.meta.env.VITE_OPENCODE_SERVER_HOST ?? "127.0.0.1"
-const port = import.meta.env.VITE_OPENCODE_SERVER_PORT ?? "4096"
+const host = import.meta.env.VITE_SGPTCODER_SERVER_HOST ?? "127.0.0.1"
+const port = import.meta.env.VITE_SGPTCODER_SERVER_PORT ?? "4096"
 
 function init() {
-  const client = createOpencodeClient({
+  const client = createSgptcoderClient({
     baseUrl: `http://${host}:${port}`,
   })
   return client

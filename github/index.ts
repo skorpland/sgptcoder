@@ -6,7 +6,7 @@ import * as core from "@actions/core"
 import * as github from "@actions/github"
 import type { Context as GitHubContext } from "@actions/github/lib/context"
 import type { IssueCommentEvent } from "@octokit/webhooks-types"
-import { createOpencodeClient } from "@skorpland/sdk"
+import { createSgptcoderClient } from "@skorpland/sdk"
 import { spawn } from "node:child_process"
 
 type GitHubAuthor = {
@@ -112,7 +112,7 @@ type IssueQueryResponse = {
   }
 }
 
-const { client, server } = createOpencode()
+const { client, server } = createSgptcoder()
 let accessToken: string
 let octoRest: Octokit
 let octoGraph: typeof graphql
@@ -126,7 +126,7 @@ type PromptFiles = Awaited<ReturnType<typeof getUserPrompt>>["promptFiles"]
 try {
   assertContextEvent("issue_comment")
   assertPayloadKeyword()
-  await assertOpencodeConnected()
+  await assertSgptcoderConnected()
 
   accessToken = await getAccessToken()
   octoRest = new Octokit({ auth: accessToken })
@@ -224,12 +224,12 @@ try {
 }
 process.exit(exitCode)
 
-function createOpencode() {
+function createSgptcoder() {
   const host = "127.0.0.1"
   const port = 4096
   const url = `http://${host}:${port}`
   const proc = spawn(`sgptcoder`, [`serve`, `--hostname=${host}`, `--port=${port}`])
-  const client = createOpencodeClient({ baseUrl: url })
+  const client = createSgptcoderClient({ baseUrl: url })
 
   return {
     server: { url, close: () => proc.kill() },
@@ -245,7 +245,7 @@ function assertPayloadKeyword() {
   }
 }
 
-async function assertOpencodeConnected() {
+async function assertSgptcoderConnected() {
   let retry = 0
   let connected = false
   do {
@@ -751,7 +751,7 @@ function footer(opts?: { image?: boolean }) {
     const titleAlt = encodeURIComponent(session.title.substring(0, 50))
     const title64 = Buffer.from(session.title.substring(0, 700), "utf8").toString("base64")
 
-    return `<a href="${useShareUrl()}/s/${shareId}"><img width="200" alt="${titleAlt}" src="https://social-cards.sst.dev/sgptcoder-share/${title64}.png?model=${providerID}/${modelID}&version=${session.version}&id=${shareId}" /></a>\n`
+    return `<a href="${useShareUrl()}/s/${shareId}"><img width="200" alt="${titleAlt}" src="https://social-cards.skorpland.com/sgptcoder-share/${title64}.png?model=${providerID}/${modelID}&version=${session.version}&id=${shareId}" /></a>\n`
   })()
   const shareUrl = shareId ? `[sgptcoder session](${useShareUrl()}/s/${shareId})&nbsp;&nbsp;|&nbsp;&nbsp;` : ""
   return `\n\n${image}${shareUrl}[github run](${useEnvRunUrl()})`

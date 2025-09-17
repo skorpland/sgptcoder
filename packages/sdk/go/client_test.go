@@ -39,7 +39,7 @@ func TestUserAgentHeader(t *testing.T) {
 		}),
 	)
 	client.Session.List(context.Background(), sgptcoder.SessionListParams{})
-	if userAgent != fmt.Sprintf("Opencode/Go %s", internal.PackageVersion) {
+	if userAgent != fmt.Sprintf("Sgptcoder/Go %s", internal.PackageVersion) {
 		t.Errorf("Expected User-Agent to be correct, but got: %#v", userAgent)
 	}
 }

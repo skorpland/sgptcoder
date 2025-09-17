@@ -66,7 +66,7 @@ export namespace Share {
   }
 
   export const URL =
-    process.env["OPENCODE_API"] ??
+    process.env["SGPTCODER_API"] ??
     (Installation.isSnapshot() || Installation.isDev() ? "https://api.dev.sgptcoder.ai" : "https://api.sgptcoder.ai")
 
   export async function create(sessionID: string) {

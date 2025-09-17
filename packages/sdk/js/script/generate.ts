@@ -23,7 +23,7 @@ await createClient({
     },
     {
       name: "@hey-api/sdk",
-      instance: "OpencodeClient",
+      instance: "SgptcoderClient",
       exportFromIndex: false,
       auth: false,
     },

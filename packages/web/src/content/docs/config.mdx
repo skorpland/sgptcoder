@@ -52,10 +52,10 @@ This is also safe to be checked into Git and uses the same schema as the global 
 
 ### Custom path
 
-You can also specify a custom config file path using the `OPENCODE_CONFIG` environment variable. This takes precedence over the global and project configs.
+You can also specify a custom config file path using the `SGPTCODER_CONFIG` environment variable. This takes precedence over the global and project configs.
 
 ```bash
-export OPENCODE_CONFIG=/path/to/my/custom-config.json
+export SGPTCODER_CONFIG=/path/to/my/custom-config.json
 sgptcoder run "Hello world"
 ```
 
@@ -316,7 +316,7 @@ Use `{env:VARIABLE_NAME}` to substitute environment variables:
 ```json title="sgptcoder.json"
 {
   "$schema": "https://sgptcoder.ai/config.json",
-  "model": "{env:OPENCODE_MODEL}",
+  "model": "{env:SGPTCODER_MODEL}",
   "provider": {
     "anthropic": {
       "models": {},

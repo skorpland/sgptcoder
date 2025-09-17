@@ -3,21 +3,21 @@
 organization:
   name: sgptcoder
   docs: "https://sgptcoder.ai/docs"
-  contact: "support@sst.dev"
+  contact: "support@skorpland.com"
 
 targets:
   typescript:
     package_name: "@skorpland/sdk"
-    production_repo: "sst/sgptcoder-sdk-js"
+    production_repo: "skorpland/sgptcoder-sdk-js"
     publish:
       npm: true
   go:
     package_name: sgptcoder
-    production_repo: sst/sgptcoder-sdk-go
+    production_repo: skorpland/sgptcoder-sdk-go
   python:
     project_name: sgptcoder-ai
     package_name: sgptcoder_ai
-    production_repo: sst/sgptcoder-sdk-python
+    production_repo: skorpland/sgptcoder-sdk-python
     publish:
       pypi: true
 

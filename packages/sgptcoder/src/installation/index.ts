@@ -6,7 +6,7 @@ import { Bus } from "../bus"
 import { Log } from "../util/log"
 
 declare global {
-  const OPENCODE_VERSION: string
+  const SGPTCODER_VERSION: string
 }
 
 export namespace Installation {
@@ -115,7 +115,7 @@ export namespace Installation {
         case "bun":
           return $`bun install -g sgptcoder-ai@${target}`
         case "brew":
-          return $`brew install sst/tap/sgptcoder`.env({
+          return $`brew install skorpland/tap/sgptcoder`.env({
             HOMEBREW_NO_AUTO_UPDATE: "1",
           })
         default:
@@ -135,7 +135,7 @@ export namespace Installation {
       })
   }
 
-  export const VERSION = typeof OPENCODE_VERSION === "string" ? OPENCODE_VERSION : "dev"
+  export const VERSION = typeof SGPTCODER_VERSION === "string" ? SGPTCODER_VERSION : "dev"
   export const USER_AGENT = `sgptcoder/${VERSION}`
 
   export async function latest() {

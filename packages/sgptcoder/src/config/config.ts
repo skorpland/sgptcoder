@@ -29,14 +29,14 @@ export namespace Config {
     }
 
     // Override with custom config if provided
-    if (Flag.OPENCODE_CONFIG) {
-      result = mergeDeep(result, await loadFile(Flag.OPENCODE_CONFIG))
-      log.debug("loaded custom config", { path: Flag.OPENCODE_CONFIG })
+    if (Flag.SGPTCODER_CONFIG) {
+      result = mergeDeep(result, await loadFile(Flag.SGPTCODER_CONFIG))
+      log.debug("loaded custom config", { path: Flag.SGPTCODER_CONFIG })
     }
 
-    if (Flag.OPENCODE_CONFIG_CONTENT) {
-      result = mergeDeep(result, JSON.parse(Flag.OPENCODE_CONFIG_CONTENT))
-      log.debug("loaded custom config from OPENCODE_CONFIG_CONTENT")
+    if (Flag.SGPTCODER_CONFIG_CONTENT) {
+      result = mergeDeep(result, JSON.parse(Flag.SGPTCODER_CONFIG_CONTENT))
+      log.debug("loaded custom config from SGPTCODER_CONFIG_CONTENT")
     }
 
     for (const [key, value] of Object.entries(auth)) {
@@ -169,8 +169,8 @@ export namespace Config {
       ].map((x) => "file://" + x),
     )
 
-    if (Flag.OPENCODE_PERMISSION) {
-      result.permission = mergeDeep(result.permission ?? {}, JSON.parse(Flag.OPENCODE_PERMISSION))
+    if (Flag.SGPTCODER_PERMISSION) {
+      result.permission = mergeDeep(result.permission ?? {}, JSON.parse(Flag.SGPTCODER_PERMISSION))
     }
 
     if (!result.username) result.username = os.userInfo().username

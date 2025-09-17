@@ -30,7 +30,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     if (terminal.name === TERMINAL_NAME) {
       // @ts-ignore
-      const port = terminal.creationOptions.env?.["_EXTENSION_OPENCODE_PORT"]
+      const port = terminal.creationOptions.env?.["_EXTENSION_SGPTCODER_PORT"]
       port ? await appendPrompt(parseInt(port), fileRef) : terminal.sendText(fileRef)
       terminal.show()
     }
@@ -52,12 +52,12 @@ export function activate(context: vscode.ExtensionContext) {
         preserveFocus: false,
       },
       env: {
-        _EXTENSION_OPENCODE_PORT: port.toString(),
+        _EXTENSION_SGPTCODER_PORT: port.toString(),
       },
     })
 
     terminal.show()
-    terminal.sendText(`OPENCODE_CALLER=vscode sgptcoder --port ${port}`)
+    terminal.sendText(`SGPTCODER_CALLER=vscode sgptcoder --port ${port}`)
 
     const fileRef = getActiveFile()
     if (!fileRef) return

@@ -2,7 +2,7 @@ import type { Hooks, Plugin as PluginInstance } from "@skorpland/plugin"
 import { Config } from "../config/config"
 import { Bus } from "../bus"
 import { Log } from "../util/log"
-import { createOpencodeClient } from "@skorpland/sdk"
+import { createSgptcoderClient } from "@skorpland/sdk"
 import { Server } from "../server/server"
 import { BunProc } from "../bun"
 import { Instance } from "../project/instance"
@@ -13,7 +13,7 @@ export namespace Plugin {
   const log = Log.create({ service: "plugin" })
 
   const state = Instance.state(async () => {
-    const client = createOpencodeClient({
+    const client = createSgptcoderClient({
       baseUrl: "http://localhost:4096",
       // @ts-expect-error
       fetch: async (...args) => Server.App().fetch(...args),
@@ -30,7 +30,7 @@ export namespace Plugin {
       z: await import("zod").then((m) => m.z),
     }
     const plugins = [...(config.plugin ?? [])]
-    if (!Flag.OPENCODE_DISABLE_DEFAULT_PLUGINS) {
+    if (!Flag.SGPTCODER_DISABLE_DEFAULT_PLUGINS) {
       plugins.push("sgptcoder-copilot-auth@0.0.2")
       plugins.push("sgptcoder-anthropic-auth@0.0.2")
     }

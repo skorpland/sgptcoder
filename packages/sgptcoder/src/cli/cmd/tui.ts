@@ -19,11 +19,11 @@ import { Instance } from "../../project/instance"
 import { $ } from "bun"
 
 declare global {
-  const OPENCODE_TUI_PATH: string
+  const SGPTCODER_TUI_PATH: string
 }
 
-if (typeof OPENCODE_TUI_PATH !== "undefined") {
-  await import(OPENCODE_TUI_PATH as string, {
+if (typeof SGPTCODER_TUI_PATH !== "undefined") {
+  await import(SGPTCODER_TUI_PATH as string, {
     with: { type: "file" },
   })
 }
@@ -150,8 +150,8 @@ export const TuiCommand = cmd({
           env: {
             ...process.env,
             CGO_ENABLED: "0",
-            OPENCODE_SERVER: server.url.toString(),
-            OPENCODE_PROJECT: JSON.stringify(Instance.project),
+            SGPTCODER_SERVER: server.url.toString(),
+            SGPTCODER_PROJECT: JSON.stringify(Instance.project),
           },
           onExit: () => {
             server.stop()
@@ -162,7 +162,7 @@ export const TuiCommand = cmd({
           if (Installation.isDev()) return
           if (Installation.isSnapshot()) return
           const config = await Config.global()
-          if (config.autoupdate === false || Flag.OPENCODE_DISABLE_AUTOUPDATE) return
+          if (config.autoupdate === false || Flag.SGPTCODER_DISABLE_AUTOUPDATE) return
           const latest = await Installation.latest().catch(() => {})
           if (!latest) return
           if (Installation.VERSION === latest) return
@@ -192,7 +192,7 @@ export const TuiCommand = cmd({
         UI.empty()
         UI.println(UI.logo("   "))
         const result = await Bun.spawn({
-          cmd: [...getOpencodeCommand(), "auth", "login"],
+          cmd: [...getSgptcoderCommand(), "auth", "login"],
           cwd: process.cwd(),
           stdout: "inherit",
           stderr: "inherit",
@@ -210,10 +210,10 @@ export const TuiCommand = cmd({
  * In development: ["bun", "run", "packages/sgptcoder/src/index.ts"]
  * In production: ["/path/to/sgptcoder"]
  */
-function getOpencodeCommand(): string[] {
-  // Check if OPENCODE_BIN_PATH is set (used by shell wrapper scripts)
-  if (process.env["OPENCODE_BIN_PATH"]) {
-    return [process.env["OPENCODE_BIN_PATH"]]
+function getSgptcoderCommand(): string[] {
+  // Check if SGPTCODER_BIN_PATH is set (used by shell wrapper scripts)
+  if (process.env["SGPTCODER_BIN_PATH"]) {
+    return [process.env["SGPTCODER_BIN_PATH"]]
   }
 
   const execPath = process.execPath.toLowerCase()

@@ -117,7 +117,7 @@ export default function Home() {
             <h3 data-component="title">npm</h3>
             <button data-copy data-slot="button">
               <span>
-                npm install -g <strong>sgptcoder-ai</strong>
+                npm install -g <strong>@skorpland/sgptcoder</strong>
               </span>
               <CopyStatus />
             </button>
@@ -126,7 +126,7 @@ export default function Home() {
             <h3 data-component="title">bun</h3>
             <button data-copy data-slot="button">
               <span>
-                bun install -g <strong>sgptcoder-ai</strong>
+                bun install -g <strong>@skorpland/sgptcoder</strong>
               </span>
               <CopyStatus />
             </button>

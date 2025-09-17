@@ -1,6 +1,6 @@
 import type {
   Event,
-  createOpencodeClient,
+  createSgptcoderClient,
   Project,
   Model,
   Provider,
@@ -13,7 +13,7 @@ import type {
 import type { BunShell } from "./shell"
 
 export type PluginInput = {
-  client: ReturnType<typeof createOpencodeClient>
+  client: ReturnType<typeof createSgptcoderClient>
   project: Project
   directory: string
   worktree: string

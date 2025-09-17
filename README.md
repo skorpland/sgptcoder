@@ -6,11 +6,11 @@
 
 ```bash
 # YOLO
-curl -fsSL https://sgptcoder.ai/install | bash
+curl -fsSL https://raw.githubusercontent.com/skorpland/sgptcoder/refs/heads/main/install | bash
 
 # Package managers
-npm i -g sgptcoder-ai@latest        # or bun/pnpm/yarn
-brew install sst/tap/sgptcoder      # macOS and Linux
+npm i -g @skorpland/sgptcoder        # or bun/pnpm/yarn
+brew install skorpland/tap/sgptcoder      # macOS and Linux
 paru -S sgptcoder-bin               # Arch Linux
 ```
 
@@ -21,14 +21,14 @@ paru -S sgptcoder-bin               # Arch Linux
 
 The install script respects the following priority order for the installation path:
 
-1. `$OPENCODE_INSTALL_DIR` - Custom installation directory
+1. `$SGPTCODER_INSTALL_DIR` - Custom installation directory
 2. `$XDG_BIN_DIR` - XDG Base Directory Specification compliant path
 3. `$HOME/bin` - Standard user binary directory (if exists or can be created)
 4. `$HOME/.sgptcoder/bin` - Default fallback
 
 ```bash
 # Examples
-OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://sgptcoder.ai/install | bash
+SGPTCODER_INSTALL_DIR=/usr/local/bin curl -fsSL https://sgptcoder.ai/install | bash
 XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://sgptcoder.ai/install | bash
 ```
 

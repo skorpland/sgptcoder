@@ -298,7 +298,7 @@ export namespace Provider {
               modelID !== "gpt-5-chat-latest" && !(providerID === "openrouter" && modelID === "openai/gpt-5-chat"),
           )
           // Filter out experimental models
-          .filter(([, model]) => !model.experimental || Flag.OPENCODE_ENABLE_EXPERIMENTAL_MODELS),
+          .filter(([, model]) => !model.experimental || Flag.SGPTCODER_ENABLE_EXPERIMENTAL_MODELS),
       )
       provider.info.models = filteredModels
 

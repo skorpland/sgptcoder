@@ -61,7 +61,7 @@ const cli = yargs(hideBin(process.argv))
       })(),
     })
 
-    process.env["OPENCODE"] = "1"
+    process.env["SGPTCODER"] = "1"
 
     Log.Default.info("sgptcoder", {
       version: Installation.VERSION,

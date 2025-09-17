@@ -5,7 +5,7 @@ process.chdir(dir)
 
 import { $ } from "bun"
 
-const snapshot = process.env["OPENCODE_SNAPSHOT"] === "true"
+const snapshot = process.env["SGPTCODER_SNAPSHOT"] === "true"
 
 await $`bun tsc`
 

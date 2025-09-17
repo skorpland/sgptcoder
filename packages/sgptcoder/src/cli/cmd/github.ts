@@ -227,7 +227,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run sgptcoder
-        uses: sst/sgptcoder/github@latest${envStr}
+        uses: skorpland/sgptcoder/github@latest${envStr}
         with:
           model: ${provider}/${model}
 `.trim(),

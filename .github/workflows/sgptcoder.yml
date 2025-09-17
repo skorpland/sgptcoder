@@ -20,8 +20,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run sgptcoder
-        uses: sst/sgptcoder/github@latest
+        uses: skorpland/sgptcoder/github@latest
         env:
-          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
+          SGPTCODER_API_KEY: ${{ secrets.SGPTCODER_API_KEY }}
         with:
           model: sgptcoder/sonic

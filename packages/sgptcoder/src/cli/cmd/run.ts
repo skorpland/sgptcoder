@@ -109,7 +109,7 @@ export const RunCommand = cmd({
       }
 
       const cfg = await Config.get()
-      if (cfg.share === "auto" || Flag.OPENCODE_AUTO_SHARE || args.share) {
+      if (cfg.share === "auto" || Flag.SGPTCODER_AUTO_SHARE || args.share) {
         try {
           await Session.share(session.id)
           UI.println(UI.Style.TEXT_INFO_BOLD + "~  https://sgptcoder.ai/s/" + session.id.slice(-8))

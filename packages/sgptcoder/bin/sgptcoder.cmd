@@ -1,8 +1,8 @@
 @echo off
 setlocal enabledelayedexpansion
 
-if defined OPENCODE_BIN_PATH (
-    set "resolved=%OPENCODE_BIN_PATH%"
+if defined SGPTCODER_BIN_PATH (
+    set "resolved=%SGPTCODER_BIN_PATH%"
     goto :execute
 )
 

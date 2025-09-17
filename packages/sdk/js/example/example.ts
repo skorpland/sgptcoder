@@ -1,7 +1,7 @@
-import { createOpencodeClient, createOpencodeServer } from "@skorpland/sdk"
+import { createSgptcoderClient, createSgptcoderServer } from "@skorpland/sdk"
 
-const server = await createOpencodeServer()
-const client = createOpencodeClient({ baseUrl: server.url })
+const server = await createSgptcoderServer()
+const client = createSgptcoderClient({ baseUrl: server.url })
 
 const input = await Array.fromAsync(new Bun.Glob("packages/core/*.ts").scan())
 

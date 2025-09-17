@@ -67,7 +67,7 @@ This will walk you through installing the GitHub app, creating the workflow, and
              fetch-depth: 1
 
          - name: Run sgptcoder
-           uses: sst/sgptcoder/github@latest
+           uses: skorpland/sgptcoder/github@latest
            env:
              ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
            with:

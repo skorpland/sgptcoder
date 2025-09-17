@@ -28,9 +28,9 @@ npm install @skorpland/sdk
 Create a client instance to connect to your server:
 
 ```javascript
-import { createOpencodeClient } from "@skorpland/sdk"
+import { createSgptcoderClient } from "@skorpland/sdk"
 
-const client = createOpencodeClient({
+const client = createSgptcoderClient({
   baseUrl: "http://localhost:4096",
   responseStyle: "data",
 })
@@ -53,9 +53,9 @@ const client = createOpencodeClient({
 You can also programmatically start an sgptcoder server:
 
 ```javascript
-import { createOpencodeServer } from "@skorpland/sdk"
+import { createSgptcoderServer } from "@skorpland/sdk"
 
-const server = await createOpencodeServer({
+const server = await createSgptcoderServer({
   hostname: "127.0.0.1",
   port: 4096,
 })
@@ -68,9 +68,9 @@ server.close()
 You can pass a configuration object to customize server behavior. The server still picks up your `sgptcoder.json`, but you can override or add configuration inline:
 
 ```javascript
-import { createOpencodeServer } from "@skorpland/sdk"
+import { createSgptcoderServer } from "@skorpland/sdk"
 
-const server = await createOpencodeServer({
+const server = await createSgptcoderServer({
   hostname: "127.0.0.1",
   port: 4096,
   config: {

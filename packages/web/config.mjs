@@ -4,7 +4,7 @@ export default {
   url: stage === "production" ? "https://sgptcoder.ai" : `https://${stage}.sgptcoder.ai`,
   console: stage === "production" ? "https://sgptcoder.ai/auth" : `https://${stage}.sgptcoder.ai/auth`,
   email: "contact@anoma.ly",
-  socialCard: "https://social-cards.sst.dev",
+  socialCard: "https://social-cards.skorpland.com",
   github: "https://github.com/skorpland/sgptcoder",
   discord: "https://sgptcoder.ai/discord",
   headerLinks: [

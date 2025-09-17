@@ -1,8 +1,8 @@
-# Opencode Go API Library
+# Sgptcoder Go API Library
 
 <a href="https://pkg.go.dev/github.com/skorpland/sgptcoder-sdk-go"><img src="https://pkg.go.dev/badge/github.com/skorpland/sgptcoder-sdk-go.svg" alt="Go Reference"></a>
 
-The Opencode Go library provides convenient access to the [Opencode REST API](https://sgptcoder.ai/docs)
+The Sgptcoder Go library provides convenient access to the [Sgptcoder REST API](https://sgptcoder.ai/docs)
 from applications written in Go.
 
 It is generated with [Stainless](https://www.stainless.com/).

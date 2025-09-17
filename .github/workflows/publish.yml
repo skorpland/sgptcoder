@@ -57,7 +57,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.AUR_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          git config --global user.email "sgptcoder@sst.dev"
+          git config --global user.email "sgptcoder@skorpland.com"
           git config --global user.name "sgptcoder"
           ssh-keyscan -H aur.archlinux.org >> ~/.ssh/known_hosts || true
       - name: Install dependencies
@@ -67,7 +67,7 @@ jobs:
         run: |
           ./script/publish.ts
         env:
-          OPENCODE_BUMP: ${{ inputs.bump }}
+          SGPTCODER_BUMP: ${{ inputs.bump }}
           GITHUB_TOKEN: ${{ secrets.SST_GITHUB_TOKEN }}
           AUR_KEY: ${{ secrets.AUR_KEY }}
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
