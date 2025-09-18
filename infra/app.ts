@@ -1,10 +1,10 @@
 import { domain } from "./stage"
 
-const GITHUB_APP_ID = new sst.Secret("GITHUB_APP_ID")
-const GITHUB_APP_PRIVATE_KEY = new sst.Secret("GITHUB_APP_PRIVATE_KEY")
-const bucket = new sst.cloudflare.Bucket("Bucket")
+const GITHUB_APP_ID = new sgpt.Secret("GITHUB_APP_ID")
+const GITHUB_APP_PRIVATE_KEY = new sgpt.Secret("GITHUB_APP_PRIVATE_KEY")
+const bucket = new sgpt.cloudflare.Bucket("Bucket")
 
-export const api = new sst.cloudflare.Worker("Api", {
+export const api = new sgpt.cloudflare.Worker("Api", {
   domain: `api.${domain}`,
   handler: "packages/function/src/api.ts",
   environment: {
@@ -33,7 +33,7 @@ export const api = new sst.cloudflare.Worker("Api", {
   },
 })
 
-new sst.cloudflare.x.Astro("Web", {
+new sgpt.cloudflare.x.Astro("Web", {
   domain: "docs." + domain,
   path: "packages/web",
   environment: {

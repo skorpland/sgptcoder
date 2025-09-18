@@ -17,9 +17,9 @@
     "./*": "./src/*"
   },
   "scripts": {
-    "db": "sst shell drizzle-kit",
-    "db-dev": "sst shell --stage dev -- drizzle-kit",
-    "db-prod": "sst shell --stage production -- drizzle-kit",
+    "db": "sgpt shell drizzle-kit",
+    "db-dev": "sgpt shell --stage dev -- drizzle-kit",
+    "db-prod": "sgpt shell --stage production -- drizzle-kit",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

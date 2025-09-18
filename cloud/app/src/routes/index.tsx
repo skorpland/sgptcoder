@@ -135,7 +135,7 @@ export default function Home() {
             <h3 data-component="title">homebrew</h3>
             <button data-copy data-slot="button">
               <span>
-                brew install <strong>sst/tap/sgptcoder</strong>
+                brew install <strong>sgpt/tap/sgptcoder</strong>
               </span>
               <CopyStatus />
             </button>

@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 .worktrees
-.sst
+.sgpt
 .env
 .idea
 .vscode

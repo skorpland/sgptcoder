@@ -30,7 +30,7 @@ const password = new planetscale.Password("DatabasePassword", {
   branch: branch.name,
 })
 
-export const database = new sst.Linkable("Database", {
+export const database = new sgpt.Linkable("Database", {
   properties: {
     host: password.accessHostUrl,
     database: cluster.name,
@@ -40,7 +40,7 @@ export const database = new sst.Linkable("Database", {
   },
 })
 
-new sst.x.DevCommand("Studio", {
+new sgpt.x.DevCommand("Studio", {
   link: [database],
   dev: {
     command: "bun db studio",
@@ -53,11 +53,11 @@ new sst.x.DevCommand("Studio", {
 // AUTH
 ////////////////
 
-const GITHUB_CLIENT_ID_CONSOLE = new sst.Secret("GITHUB_CLIENT_ID_CONSOLE")
-const GITHUB_CLIENT_SECRET_CONSOLE = new sst.Secret("GITHUB_CLIENT_SECRET_CONSOLE")
-const GOOGLE_CLIENT_ID = new sst.Secret("GOOGLE_CLIENT_ID")
-const authStorage = new sst.cloudflare.Kv("AuthStorage")
-export const auth = new sst.cloudflare.Worker("AuthApi", {
+const GITHUB_CLIENT_ID_CONSOLE = new sgpt.Secret("GITHUB_CLIENT_ID_CONSOLE")
+const GITHUB_CLIENT_SECRET_CONSOLE = new sgpt.Secret("GITHUB_CLIENT_SECRET_CONSOLE")
+const GOOGLE_CLIENT_ID = new sgpt.Secret("GOOGLE_CLIENT_ID")
+const authStorage = new sgpt.cloudflare.Kv("AuthStorage")
+export const auth = new sgpt.cloudflare.Worker("AuthApi", {
   domain: `auth.${domain}`,
   handler: "cloud/function/src/auth.ts",
   url: true,
@@ -99,16 +99,16 @@ export const stripeWebhook = new WebhookEndpoint("StripeWebhookEndpoint", {
   ],
 })
 
-const ANTHROPIC_API_KEY = new sst.Secret("ANTHROPIC_API_KEY")
-const OPENAI_API_KEY = new sst.Secret("OPENAI_API_KEY")
-const XAI_API_KEY = new sst.Secret("XAI_API_KEY")
-const BASETEN_API_KEY = new sst.Secret("BASETEN_API_KEY")
-const FIREWORKS_API_KEY = new sst.Secret("FIREWORKS_API_KEY")
-const STRIPE_SECRET_KEY = new sst.Secret("STRIPE_SECRET_KEY")
-const AUTH_API_URL = new sst.Linkable("AUTH_API_URL", {
+const ANTHROPIC_API_KEY = new sgpt.Secret("ANTHROPIC_API_KEY")
+const OPENAI_API_KEY = new sgpt.Secret("OPENAI_API_KEY")
+const XAI_API_KEY = new sgpt.Secret("XAI_API_KEY")
+const BASETEN_API_KEY = new sgpt.Secret("BASETEN_API_KEY")
+const FIREWORKS_API_KEY = new sgpt.Secret("FIREWORKS_API_KEY")
+const STRIPE_SECRET_KEY = new sgpt.Secret("STRIPE_SECRET_KEY")
+const AUTH_API_URL = new sgpt.Linkable("AUTH_API_URL", {
   properties: { value: auth.url.apply((url) => url!) },
 })
-const STRIPE_WEBHOOK_SECRET = new sst.Linkable("STRIPE_WEBHOOK_SECRET", {
+const STRIPE_WEBHOOK_SECRET = new sgpt.Linkable("STRIPE_WEBHOOK_SECRET", {
   properties: { value: stripeWebhook.secret },
 })
 
@@ -118,14 +118,14 @@ const STRIPE_WEBHOOK_SECRET = new sst.Linkable("STRIPE_WEBHOOK_SECRET", {
 
 let logProcessor
 if ($app.stage === "production" || $app.stage === "frank") {
-  const HONEYCOMB_API_KEY = new sst.Secret("HONEYCOMB_API_KEY")
-  logProcessor = new sst.cloudflare.Worker("LogProcessor", {
+  const HONEYCOMB_API_KEY = new sgpt.Secret("HONEYCOMB_API_KEY")
+  logProcessor = new sgpt.cloudflare.Worker("LogProcessor", {
     handler: "cloud/function/src/log-processor.ts",
     link: [HONEYCOMB_API_KEY],
   })
 }
 
-new sst.cloudflare.x.SolidStart("Console", {
+new sgpt.cloudflare.x.SolidStart("Console", {
   domain,
   path: "cloud/app",
   link: [

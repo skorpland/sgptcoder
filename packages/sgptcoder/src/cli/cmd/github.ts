@@ -78,8 +78,8 @@ export const GithubInstallCommand = cmd({
         // match https or git pattern
         // ie. https://github.com/skorpland/sgptcoder.git
         // ie. https://github.com/skorpland/sgptcoder
-        // ie. git@github.com:sst/sgptcoder.git
-        // ie. git@github.com:sst/sgptcoder
+        // ie. git@github.com:sgpt/sgptcoder.git
+        // ie. git@github.com:sgpt/sgptcoder
         // ie. ssh://git@github.com/skorpland/sgptcoder.git
         // ie. ssh://git@github.com/skorpland/sgptcoder
         const parsed = info.match(/^(?:(?:https?|ssh):\/\/)?(?:git@)?github\.com[:/]([^/]+)\/([^/.]+?)(?:\.git)?$/)

@@ -3,23 +3,23 @@
 /* eslint-disable */
 /* deno-fmt-ignore-file */
 
-import "sst"
-declare module "sst" {
+import "sgpt"
+declare module "sgpt" {
   export interface Resource {
     ANTHROPIC_API_KEY: {
-      type: "sst.sst.Secret"
+      type: "sgpt.sgpt.Secret"
       value: string
     }
     AUTH_API_URL: {
-      type: "sst.sst.Linkable"
+      type: "sgpt.sgpt.Linkable"
       value: string
     }
     BASETEN_API_KEY: {
-      type: "sst.sst.Secret"
+      type: "sgpt.sgpt.Secret"
       value: string
     }
     Console: {
-      type: "sst.cloudflare.SolidStart"
+      type: "sgpt.cloudflare.SolidStart"
       url: string
     }
     Database: {
@@ -27,62 +27,62 @@ declare module "sst" {
       host: string
       password: string
       port: number
-      type: "sst.sst.Linkable"
+      type: "sgpt.sgpt.Linkable"
       username: string
     }
     FIREWORKS_API_KEY: {
-      type: "sst.sst.Secret"
+      type: "sgpt.sgpt.Secret"
       value: string
     }
     GITHUB_APP_ID: {
-      type: "sst.sst.Secret"
+      type: "sgpt.sgpt.Secret"
       value: string
     }
     GITHUB_APP_PRIVATE_KEY: {
-      type: "sst.sst.Secret"
+      type: "sgpt.sgpt.Secret"
       value: string
     }
     GITHUB_CLIENT_ID_CONSOLE: {
-      type: "sst.sst.Secret"
+      type: "sgpt.sgpt.Secret"
       value: string
     }
     GITHUB_CLIENT_SECRET_CONSOLE: {
-      type: "sst.sst.Secret"
+      type: "sgpt.sgpt.Secret"
       value: string
     }
     GOOGLE_CLIENT_ID: {
-      type: "sst.sst.Secret"
+      type: "sgpt.sgpt.Secret"
       value: string
     }
     HONEYCOMB_API_KEY: {
-      type: "sst.sst.Secret"
+      type: "sgpt.sgpt.Secret"
       value: string
     }
     OPENAI_API_KEY: {
-      type: "sst.sst.Secret"
+      type: "sgpt.sgpt.Secret"
       value: string
     }
     STRIPE_SECRET_KEY: {
-      type: "sst.sst.Secret"
+      type: "sgpt.sgpt.Secret"
       value: string
     }
     STRIPE_WEBHOOK_SECRET: {
-      type: "sst.sst.Linkable"
+      type: "sgpt.sgpt.Linkable"
       value: string
     }
     Web: {
-      type: "sst.cloudflare.Astro"
+      type: "sgpt.cloudflare.Astro"
       url: string
     }
     XAI_API_KEY: {
-      type: "sst.sst.Secret"
+      type: "sgpt.sgpt.Secret"
       value: string
     }
   }
 }
 // cloudflare
 import * as cloudflare from "@cloudflare/workers-types"
-declare module "sst" {
+declare module "sgpt" {
   export interface Resource {
     Api: cloudflare.Service
     AuthApi: cloudflare.Service
@@ -92,5 +92,5 @@ declare module "sst" {
   }
 }
 
-import "sst"
+import "sgpt"
 export {}

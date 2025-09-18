@@ -4,7 +4,7 @@ import { randomUUID } from "node:crypto"
 import { jwtVerify, createRemoteJWKSet } from "jose"
 import { createAppAuth } from "@octokit/auth-app"
 import { Octokit } from "@octokit/rest"
-import { Resource } from "sst"
+import { Resource } from "sgpt"
 
 type Env = {
   SYNC_SERVER: DurableObjectNamespace<SyncServer>

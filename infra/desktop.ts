@@ -1,6 +1,6 @@
 import { domain } from "./stage"
 
-new sst.cloudflare.StaticSite("Desktop", {
+new sgpt.cloudflare.StaticSite("Desktop", {
   domain: "desktop." + domain,
   path: "packages/app",
   build: {

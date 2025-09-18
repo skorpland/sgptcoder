@@ -51,7 +51,7 @@ aurs:
       install -Dm755 ./sgptcoder "${pkgdir}/usr/bin/sgptcoder"
 brews:
   - repository:
-      owner: sst
+      owner: sgpt
       name: homebrew-tap
 nfpms:
   - maintainer: kujtimiihoxha

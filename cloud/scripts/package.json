@@ -5,9 +5,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "shell": "sst shell -- bun tsx",
-    "shell-dev": "sst shell --stage dev -- bun tsx",
-    "shell-prod": "sst shell --stage production -- bun tsx"
+    "shell": "sgpt shell -- bun tsx",
+    "shell-dev": "sgpt shell --stage dev -- bun tsx",
+    "shell-prod": "sgpt shell --stage production -- bun tsx"
   },
   "dependencies": {
     "@skorpland/cloud-core": "workspace:*",

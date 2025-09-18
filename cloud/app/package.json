@@ -4,7 +4,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "dev": "vinxi dev --host 0.0.0.0",
-    "dev:remote": "VITE_AUTH_URL=https://auth.dev.sgptcoder.ai bun sst shell --stage=dev bun dev",
+    "dev:remote": "VITE_AUTH_URL=https://auth.dev.sgptcoder.ai bun sgpt shell --stage=dev bun dev",
     "build": "vinxi build && ../../packages/sgptcoder/script/schema.ts ./.output/public/config.json",
     "start": "vinxi start",
     "version": "0.9.7"

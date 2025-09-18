@@ -111,12 +111,12 @@ To test locally:
 ### Issue comment event
 
 ```
-MOCK_EVENT='{"eventName":"issue_comment","repo":{"owner":"sst","repo":"hello-world"},"actor":"fwang","payload":{"issue":{"number":4},"comment":{"id":1,"body":"hey sgptcoder, summarize thread"}}}'
+MOCK_EVENT='{"eventName":"issue_comment","repo":{"owner":"sgpt","repo":"hello-world"},"actor":"fwang","payload":{"issue":{"number":4},"comment":{"id":1,"body":"hey sgptcoder, summarize thread"}}}'
 ```
 
 Replace:
 
-- `"owner":"sst"` with repo owner
+- `"owner":"sgpt"` with repo owner
 - `"repo":"hello-world"` with repo name
 - `"actor":"fwang"` with the GitHub username of commentor
 - `"number":4` with the GitHub issue id
@@ -125,7 +125,7 @@ Replace:
 ### Issue comment with image attachment.
 
 ```
-MOCK_EVENT='{"eventName":"issue_comment","repo":{"owner":"sst","repo":"hello-world"},"actor":"fwang","payload":{"issue":{"number":4},"comment":{"id":1,"body":"hey sgptcoder, what is in my image ![Image](https://github.com/user-attachments/assets/xxxxxxxx)"}}}'
+MOCK_EVENT='{"eventName":"issue_comment","repo":{"owner":"sgpt","repo":"hello-world"},"actor":"fwang","payload":{"issue":{"number":4},"comment":{"id":1,"body":"hey sgptcoder, what is in my image ![Image](https://github.com/user-attachments/assets/xxxxxxxx)"}}}'
 ```
 
 Replace the image URL `https://github.com/user-attachments/assets/xxxxxxxx` with a valid GitHub attachment (you can generate one by commenting with an image in any issue).
@@ -133,5 +133,5 @@ Replace the image URL `https://github.com/user-attachments/assets/xxxxxxxx` with
 ### PR comment event
 
 ```
-MOCK_EVENT='{"eventName":"issue_comment","repo":{"owner":"sst","repo":"hello-world"},"actor":"fwang","payload":{"issue":{"number":4,"pull_request":{}},"comment":{"id":1,"body":"hey sgptcoder, summarize thread"}}}'
+MOCK_EVENT='{"eventName":"issue_comment","repo":{"owner":"sgpt","repo":"hello-world"},"actor":"fwang","payload":{"issue":{"number":4,"pull_request":{}},"comment":{"id":1,"body":"hey sgptcoder, summarize thread"}}}'
 ```

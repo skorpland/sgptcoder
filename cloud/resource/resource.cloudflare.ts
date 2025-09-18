@@ -12,7 +12,7 @@ export const Resource = new Proxy(
         // @ts-expect-error
         return JSON.parse(env.SST_RESOURCE_App)
       }
-      throw new Error(`"${prop}" is not linked in your sst.config.ts (cloudflare)`)
+      throw new Error(`"${prop}" is not linked in your sgpt.config.ts (cloudflare)`)
     },
   },
 ) as Record<string, any>

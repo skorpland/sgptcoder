@@ -1,1 +1,1 @@
-export { Resource } from "sst"
+export { Resource } from "sgpt"
