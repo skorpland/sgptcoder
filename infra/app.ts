@@ -38,7 +38,7 @@ new sgpt.cloudflare.x.Astro("Web", {
   path: "packages/web",
   environment: {
     // For astro config
-    SST_STAGE: $app.stage,
+    SGPT_STAGE: $app.stage,
     VITE_API_URL: api.url.apply((url) => url!),
   },
 })

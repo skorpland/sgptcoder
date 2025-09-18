@@ -1,4 +1,4 @@
-const stage = process.env.SST_STAGE || "dev"
+const stage = process.env.SGPT_STAGE || "dev"
 
 export default {
   url: stage === "production" ? "https://sgptcoder.ai" : `https://${stage}.sgptcoder.ai`,

@@ -79,7 +79,7 @@
         "typescript": "catalog:",
       },
     },
-    "packages/app": {
+    "packages/agentapp": {
       "name": "@skorpland/app",
       "version": "0.9.7",
       "dependencies": {
@@ -690,7 +690,7 @@
 
     "@skorpland/sdk": ["@skorpland/sdk@workspace:packages/sdk/js"],
 
-    "@skorpland/app": ["@skorpland/app@workspace:packages/app"],
+    "@skorpland/app": ["@skorpland/app@workspace:packages/agentapp"],
 
     "@skorpland/cloud-app": ["@skorpland/cloud-app@workspace:cloud/app"],
 

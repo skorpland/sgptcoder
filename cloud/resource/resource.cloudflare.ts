@@ -10,7 +10,7 @@ export const Resource = new Proxy(
         return typeof value === "string" ? JSON.parse(value) : value
       } else if (prop === "App") {
         // @ts-expect-error
-        return JSON.parse(env.SST_RESOURCE_App)
+        return JSON.parse(env.SGPT_RESOURCE_App)
       }
       throw new Error(`"${prop}" is not linked in your sgpt.config.ts (cloudflare)`)
     },
